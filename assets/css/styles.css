@@ -271,6 +271,10 @@ a:hover{text-decoration:underline;}
   .kpis{grid-template-columns:1fr;}
   .nav{display:none;}
   .mobile-toggle{display:block;}
+  .brand{
+    margin-left:20px;
+    padding-right:12px;
+  }
   .header__top-inner{
     flex-direction:column; align-items:flex-start; gap:10px;
   }

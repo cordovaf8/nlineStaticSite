@@ -20,6 +20,17 @@
   }
 
   document.addEventListener("click", (e) => {
+    const mobileBtn = e.target.closest("[data-mobile-toggle]");
+    if (mobileBtn) {
+      const mobilePanel = document.querySelector("[data-mobile-panel]");
+      if (mobilePanel) {
+        const open = mobilePanel.dataset.open === "true";
+        mobilePanel.dataset.open = open ? "false" : "true";
+        mobileBtn.setAttribute("aria-expanded", open ? "false" : "true");
+        if (!open) closeAllDropdowns();
+      }
+      return;
+    }
     const btn = e.target.closest("[data-dropdown-button]");
     if (btn) {
       e.preventDefault();
@@ -35,16 +46,8 @@
   });
 
   // ----- Mobile panel -----
-  const mobileToggle = document.querySelector("[data-mobile-toggle]");
-  const mobilePanel = document.querySelector("[data-mobile-panel]");
-  if (mobileToggle && mobilePanel) {
-    mobileToggle.addEventListener("click", () => {
-      const open = mobilePanel.dataset.open === "true";
-      mobilePanel.dataset.open = open ? "false" : "true";
-      mobileToggle.setAttribute("aria-expanded", open ? "false" : "true");
-      if (!open) closeAllDropdowns();
-    });
-  }
+  // Uses event delegation (see click handler above) so it works after header.js
+  // injects the header on DOMContentLoaded.
 
   // ----- Tabs -----
   // For each [data-tabs] container:

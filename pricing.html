@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="N Line Electric - Contact us for quotes on electrical services, distribution, and industrial projects." />
+  <title>N Line Electric | Get a Quote</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-header></div>
+
+<main id="main" class="container">
+  <section class="hero">
+    <div class="card">
+      <h1 class="h1">Rates & Pricing</h1>
+      <p class="lead">
+        Example rates below are for demo purposes. Use the tabs to compare plan types.
+      </p>
+
+      <div class="section" data-tabs>
+        <div class="tabs" role="tablist" aria-label="Pricing tabs">
+          <button class="tab" role="tab" id="tab-fixed" aria-selected="true" aria-controls="panel-fixed">Fixed-Rate</button>
+          <button class="tab" role="tab" id="tab-tou" aria-selected="false" aria-controls="panel-tou">Time-of-Use</button>
+          <button class="tab" role="tab" id="tab-green" aria-selected="false" aria-controls="panel-green">Renewable</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-fixed" aria-labelledby="tab-fixed" data-active="true">
+          <table class="table" aria-label="Fixed-rate examples">
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Term</th>
+                <th>Energy Charge</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed Saver 12</td>
+                <td>12 months</td>
+                <td>10.9 ¢/kWh</td>
+                <td class="muted">Good for predictable budgeting</td>
+              </tr>
+              <tr>
+                <td>Fixed Secure 24</td>
+                <td>24 months</td>
+                <td>10.4 ¢/kWh</td>
+                <td class="muted">Longer lock-in</td>
+              </tr>
+              <tr>
+                <td>Month-to-Month</td>
+                <td>1 month</td>
+                <td>11.9 ¢/kWh</td>
+                <td class="muted">Flexible, higher variability</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-tou" aria-labelledby="tab-tou" data-active="false">
+          <table class="table" aria-label="Time-of-use examples">
+            <thead>
+              <tr>
+                <th>Window</th>
+                <th>Rate</th>
+                <th>Hours</th>
+                <th>Tips</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Off-peak</td>
+                <td>8.7 ¢/kWh</td>
+                <td>9pm–7am</td>
+                <td class="muted">Laundry, charging, dishwashing</td>
+              </tr>
+              <tr>
+                <td>Mid-peak</td>
+                <td>10.9 ¢/kWh</td>
+                <td>7am–3pm</td>
+                <td class="muted">General usage</td>
+              </tr>
+              <tr>
+                <td>Peak</td>
+                <td>16.2 ¢/kWh</td>
+                <td>3pm–9pm</td>
+                <td class="muted">Avoid heavy HVAC loads</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-green" aria-labelledby="tab-green" data-active="false">
+          <div class="grid3">
+            <div class="card">
+              <div class="feature__title">Green 100</div>
+              <p class="feature__text">100% renewable match. +0.8 ¢/kWh premium.</p>
+            </div>
+            <div class="card">
+              <div class="feature__title">Green 50</div>
+              <p class="feature__text">50% renewable match. +0.4 ¢/kWh premium.</p>
+            </div>
+            <div class="card">
+              <div class="feature__title">Community Solar</div>
+              <p class="feature__text">Optional community solar credits (availability varies).</p>
+            </div>
+          </div>
+          <p class="lead" style="margin-top:12px;">
+            Want help choosing? <a href="./contact.html">Send us a message</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
+    <div>
+      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="./assets/js/header.js"></script>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/page-transition.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="N Line Electric frequently asked questions about our electrical services." />
+  <title>N Line Electric | FAQ</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-header></div>
+
+<main id="main" class="container">
+  <section class="hero">
+    <div class="card">
+      <h1 class="h1">FAQ</h1>
+      <p class="lead">Common questions about switching plans and service.</p>
+
+      <div class="section" data-tabs>
+        <div class="tabs" role="tablist" aria-label="FAQ tabs">
+          <button class="tab" role="tab" id="tab-switch" aria-selected="true" aria-controls="panel-switch">Switching</button>
+          <button class="tab" role="tab" id="tab-bill" aria-selected="false" aria-controls="panel-bill">Billing</button>
+          <button class="tab" role="tab" id="tab-outage" aria-selected="false" aria-controls="panel-outage">Outages</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-switch" aria-labelledby="tab-switch" data-active="true">
+          <div class="card">
+            <div class="feature__title">Will my power go out when I switch?</div>
+            <p class="feature__text">No—switching providers doesn’t interrupt delivery service.</p>
+          </div>
+          <div class="card" style="margin-top:10px;">
+            <div class="feature__title">How long does switching take?</div>
+            <p class="feature__text">Most enrollments complete in 1–2 billing cycles (varies by area).</p>
+          </div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-bill" aria-labelledby="tab-bill" data-active="false">
+          <div class="card">
+            <div class="feature__title">Do you charge cancellation fees?</div>
+            <p class="feature__text">Some fixed-term plans may have early termination fees; details are shown at signup.</p>
+          </div>
+          <div class="card" style="margin-top:10px;">
+            <div class="feature__title">Can I go paperless?</div>
+            <p class="feature__text">Yes—paperless billing is available in your account portal.</p>
+          </div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-outage" aria-labelledby="tab-outage" data-active="false">
+          <div class="card">
+            <div class="feature__title">Who do I call for an outage?</div>
+            <p class="feature__text">Call your local utility for outages. We can help with billing questions.</p>
+          </div>
+          <div class="card" style="margin-top:10px;">
+            <div class="feature__title">Do you have 24/7 support?</div>
+            <p class="feature__text">Yes—our support line is available 24/7.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="lead" style="margin-top:12px;">
+        Still have questions? <a href="./contact.html">Contact us</a>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
+    <div>
+      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="./assets/js/header.js"></script>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/page-transition.js"></script>
+</body>
+</html>

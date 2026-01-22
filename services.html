@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="N Line Electric services - Medium Voltage Distribution and Electrical Services." />
+  <title>N Line Electric | Services</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-header></div>
+
+<main id="main" class="container">
+  <section class="hero">
+    <div class="card">
+      <h1 class="h1">Our Services</h1>
+      <p class="lead">We provide exemplary electrical services for industry and commerce. Use the tabs to explore our expertise.</p>
+
+      <div class="section" data-tabs>
+        <div class="tabs" role="tablist" aria-label="Services tabs">
+          <button class="tab" role="tab" id="tab-dist" aria-selected="true" aria-controls="panel-dist">Distribution</button>
+          <button class="tab" role="tab" id="tab-ind" aria-selected="false" aria-controls="panel-ind">Electrical Services</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-dist" aria-labelledby="tab-dist" data-active="true">
+          <div class="grid3">
+            <div class="card">
+              <div class="feature__title">Medium Voltage Distribution</div>
+              <p class="feature__text">We can design, develop, and build distribution overhead and underground, and maintain your lines to keep you and your world powered.</p>
+            </div>
+            <div class="card">
+              <div class="feature__title">Overhead Distribution</div>
+              <p class="feature__text">Expert installation and maintenance of overhead distribution systems for manufacturing facilities, municipal infrastructure, and warehouses.</p>
+            </div>
+            <div class="card">
+              <div class="feature__title">Underground Distribution</div>
+              <p class="feature__text">Professional underground distribution services for medium- and high-voltage applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-ind" aria-labelledby="tab-ind" data-active="false">
+          <div class="grid3">
+            <div class="card">
+              <div class="feature__title">Electrical Services</div>
+              <p class="feature__text">We have decades of experience working on industrial sites, and can provide exceptional service for any application.</p>
+            </div>
+            <div class="card">
+              <div class="feature__title">Design-Build Services</div>
+              <p class="feature__text">Complete design-build services for industrial facilities, from concept to completion.</p>
+            </div>
+            <div class="card">
+              <div class="feature__title">Substation Construction</div>
+              <p class="feature__text">Expert electrical infrastructure construction including substations and pole lines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
+    <div>
+      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="./assets/js/header.js"></script>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/page-transition.js"></script>
+</body>
+</html>
+
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="N Line Electric - Exemplary Electrical Services for Industry & Commerce. Colorado-based electrical contracting with 50+ years of combined experience." />
+  <title>N Line Electric | Home</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-header></div>
+
+<main id="main" class="container">
+  <section class="carousel-section">
+    <div class="carousel" data-carousel>
+      <div class="carousel__track" data-carousel-track>
+        <div class="carousel__slide" data-carousel-slide>
+          <img src="https://as2.ftcdn.net/jpg/02/96/45/65/1000_F_296456565_LyHIBM4QdbExDQHZiotNJfEQLMk1tbG4.webp" alt="Carousel image 1" />
+        </div>
+        <div class="carousel__slide" data-carousel-slide>
+          <img src="https://as1.ftcdn.net/jpg/01/25/73/12/1000_F_125731266_8xUqfNj35weQWGya3sLgRRryshxdzwsx.jpg" alt="Carousel image 2" />
+        </div>
+        <div class="carousel__slide" data-carousel-slide>
+          <img src="https://as2.ftcdn.net/jpg/03/59/54/33/1000_F_359543318_eGQTldzPFhYqSzFHH64CRlmSvS7KjzGD.jpg" alt="Carousel image 3" />
+        </div>
+        <div class="carousel__slide" data-carousel-slide>
+          <img src="https://as1.ftcdn.net/jpg/03/25/49/80/1000_F_325498040_y69tQhoT2cyuT0Oca5OguHKmWkvu9r6y.jpg" alt="Carousel image 4" />
+        </div>
+      </div>
+      <div class="carousel__indicators" data-carousel-indicators>
+        <button class="carousel__indicator" aria-label="Go to slide 1"></button>
+        <button class="carousel__indicator" aria-label="Go to slide 2"></button>
+        <button class="carousel__indicator" aria-label="Go to slide 3"></button>
+        <button class="carousel__indicator" aria-label="Go to slide 4"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="card">
+        <span class="badge">Colorado-based</span>
+        <h1 class="h1">What we do is not especially glamorous. It's challenging, technical, and hard work.</h1>
+        <p class="lead">
+          We have a 100% commitment to being the very best at what we do. With more than 50 years of combined experience, 
+          we provide exemplary electrical services for industry and commerce.
+        </p>
+        <div class="cta">
+          <a class="btn btn--primary" href="./services.html">Our Services</a>
+          <a class="btn" href="./contact.html">Contact Us</a>
+        </div>
+
+        <div class="kpis" aria-label="Highlights">
+          <div class="kpi">
+            <div class="kpi__n">50+</div>
+            <div class="kpi__t">Years combined experience</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__n">100%</div>
+            <div class="kpi__t">Commitment to excellence</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__n">24/7</div>
+            <div class="kpi__t">Safety first approach</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h2 class="section__title">Our Expertise</h2>
+        <div class="grid3" style="grid-template-columns:1fr; gap:10px;">
+          <div class="card" style="padding:14px;">
+            <div class="feature__title">Medium Voltage Distribution</div>
+            <p class="feature__text">Design, develop, and build distribution overhead and underground.</p>
+            <a class="btn btn--primary" href="./services.html">Learn more</a>
+          </div>
+          <div class="card" style="padding:14px;">
+            <div class="feature__title">Electrical Services</div>
+            <p class="feature__text">Decades of experience working on industrial sites.</p>
+            <a class="btn" href="./services.html">Explore</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">Safety is our Promise</h2>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
+    <div>
+      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="./assets/js/header.js"></script>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/carousel.js"></script>
+<script src="./assets/js/page-transition.js"></script>
+</body>
+</html>

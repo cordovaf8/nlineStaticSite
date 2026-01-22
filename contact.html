@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact N Line Electric - Available at sites in Colorado and Wyoming." />
+  <title>N Line Electric | Contact</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-header></div>
+
+<main id="main" class="container">
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="card">
+        <h1 class="h1">Contact N Line Electric</h1>
+        <p class="lead">
+          We are available at sites in Colorado and Wyoming. Questions about our services or need a quote? Send us a message.
+        </p>
+
+        <div class="section">
+          <div class="map" aria-label="Map">
+            <iframe
+              title="Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=14293+Longs+Peak+Court,+Longmont,+CO+80504&output=embed"></iframe>
+          </div>
+        
+          <address class="contact" style="margin-top:12px;">
+            <strong>N Line Electric</strong><br />
+            14293 Longs Peak Court<br />
+            Longmont, CO 80504<br /><br />
+            Denver: <a href="tel:3037021147">(303) 702-1147</a><br />
+            Fort Collins: <a href="tel:9705356253">(970) 535-6253</a><br />
+            Email: <a href="mailto:info@nlineelectric.com">info@nlineelectric.com</a>
+          </address>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section__title">Send a message</h2>
+
+        <script src="./assets/js/config.js"></script>
+        <form id="contactForm" novalidate>
+          <div class="form__field">
+            <label class="label" for="name">Name *</label>
+            <input class="input" id="name" name="name" autocomplete="name" required />
+          </div>
+          <div class="form__field">
+            <label class="label" for="email">Email *</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="form__field">
+            <label class="label" for="subject">Subject</label>
+            <input class="input" id="subject" name="subject" />
+          </div>
+          <div class="form__field">
+            <label class="label" for="message">Message *</label>
+            <textarea class="textarea" id="message" name="message" required></textarea>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button id="sendBtn" class="btn btn--primary" type="submit">Send</button>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+
+          <p class="lead" style="margin-top:10px;">
+            Tip: set your endpoint in <code>assets/js/config.js</code>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
+    <div>
+      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="./assets/js/header.js"></script>
+<script src="./assets/js/site.js"></script>
+<script src="./assets/js/contact.js"></script>
+<script src="./assets/js/page-transition.js"></script>
+</body>
+</html>

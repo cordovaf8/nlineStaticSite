@@ -62,7 +62,7 @@
 
   <div class="container">
     <div id="mobilePanel" class="mobile-panel" data-mobile-panel data-open="false">
-      <a href="./index.html">Home</a>
+      <a href="./index.html">jump</a>
       <a href="./services.html">Services</a>
       <a href="./about.html">About</a>
       <a href="./safety.html">Safety</a>

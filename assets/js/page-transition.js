@@ -4,13 +4,18 @@
 
   // Add fade-in class to body on page load
   function initFadeIn() {
+    // Set initial state
     document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.3s ease-in-out';
+    document.body.style.transform = 'translateY(10px)';
+    document.body.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     
-    // Trigger fade-in after a brief delay
-    setTimeout(() => {
-      document.body.style.opacity = '1';
-    }, 10);
+    // Trigger fade-in after content is ready
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'translateY(0)';
+      });
+    });
   }
 
   // Handle link clicks for fade-out
@@ -31,7 +36,8 @@
       
       // Fade out
       document.body.style.opacity = '0';
-      document.body.style.transition = 'opacity 0.2s ease-in-out';
+      document.body.style.transform = 'translateY(-10px)';
+      document.body.style.transition = 'opacity 0.3s ease-in, transform 0.3s ease-in';
       
       // Navigate after fade-out
       setTimeout(() => {
@@ -42,8 +48,16 @@
 
   // Initialize fade-in on page load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFadeIn);
+    document.addEventListener('DOMContentLoaded', () => {
+      // Wait for images and other resources
+      window.addEventListener('load', () => {
+        setTimeout(initFadeIn, 50);
+      });
+      // Fallback if load event doesn't fire quickly
+      setTimeout(initFadeIn, 300);
+    });
   } else {
-    initFadeIn();
+    // If DOM is already ready, wait a bit for content to settle
+    setTimeout(initFadeIn, 50);
   }
 })();

@@ -3,9 +3,62 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="N Line Electric services - Medium Voltage Distribution and Electrical Services." />
+  <meta name="description" content="N Line Electric services - Medium Voltage Distribution, Overhead & Underground Distribution, Design-Build, Substation Construction, and Industrial Electrical Services." />
   <title>N Line Electric | Services</title>
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script>
+    // Prevent hash scroll for industry hashes - must run immediately
+    (function() {
+      if (window.location.hash && window.location.hash.startsWith('#industry-')) {
+        // Prevent default scroll behavior
+        if (window.history && window.history.scrollRestoration) {
+          window.history.scrollRestoration = 'manual';
+        }
+        // Scroll to top immediately
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Keep scrolling to top on various events
+        var scrollToTop = function() {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        };
+        
+        window.addEventListener('load', scrollToTop);
+        window.addEventListener('DOMContentLoaded', scrollToTop);
+        
+        // Keep trying for a bit
+        var attempts = 0;
+        var interval = setInterval(function() {
+          scrollToTop();
+          attempts++;
+          if (attempts > 10) {
+            clearInterval(interval);
+          }
+        }, 50);
+      }
+      
+      // For service accordion hashes, prevent default scroll behavior
+      var hash = window.location.hash.slice(1);
+      var hashToAccordionId = {
+        'mv': 'mv',
+        'overhead': 'overhead',
+        'underground': 'underground',
+        'design': 'design',
+        'substation': 'substation',
+        'industrial': 'industrial'
+      };
+      
+      if (hash && hashToAccordionId[hash] && !hash.startsWith('industry-')) {
+        // Prevent default scroll behavior
+        if (window.history && window.history.scrollRestoration) {
+          window.history.scrollRestoration = 'manual';
+        }
+      }
+    })();
+  </script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -15,45 +68,148 @@
   <section class="hero">
     <div class="card">
       <h1 class="h1">Our Services</h1>
-      <p class="lead">We provide exemplary electrical services for industry and commerce. Use the tabs to explore our expertise.</p>
+      <p class="lead">Comprehensive electrical solutions for industrial applications. Click on any service below to learn more.</p>
 
-      <div class="section" data-tabs>
-        <div class="tabs" role="tablist" aria-label="Services tabs">
-          <button class="tab" role="tab" id="tab-dist" aria-selected="true" aria-controls="panel-dist">Distribution</button>
-          <button class="tab" role="tab" id="tab-ind" aria-selected="false" aria-controls="panel-ind">Electrical Services</button>
+      <div class="section industries-section">
+        <h2 class="section__title">Industries We Serve</h2>
+        <p class="section__subtitle">Trusted electrical solutions across diverse industries</p>
+        <div class="industries">
+          <button class="industry-chip" data-industry="municipal" id="industry-municipal" aria-label="Learn more about Municipal services" aria-selected="false">Municipal</button>
+          <button class="industry-chip" data-industry="manufacturing" id="industry-manufacturing" aria-label="Learn more about Manufacturing services" aria-selected="false">Manufacturing</button>
+          <button class="industry-chip" data-industry="warehouses" id="industry-warehouses" aria-label="Learn more about Warehouses services" aria-selected="false">Warehouses</button>
+          <button class="industry-chip" data-industry="utilities" id="industry-utilities" aria-label="Learn more about Utilities services" aria-selected="false">Utilities</button>
+          <button class="industry-chip" data-industry="water-treatment" id="industry-water-treatment" aria-label="Learn more about Water Treatment services" aria-selected="false">Water Treatment</button>
+          <button class="industry-chip" data-industry="agriculture" id="industry-agriculture" aria-label="Learn more about Agriculture services" aria-selected="false">Agriculture</button>
         </div>
+        <div class="industry-description" id="industryDescription" aria-live="polite">
+          <p class="industry-description__text"></p>
+        </div>
+      </div>
 
-        <div class="tabpanel" role="tabpanel" id="panel-dist" aria-labelledby="tab-dist" data-active="true">
-          <div class="grid3">
-            <div class="card">
-              <div class="feature__title">Medium Voltage Distribution</div>
-              <p class="feature__text">We can design, develop, and build distribution overhead and underground, and maintain your lines to keep you and your world powered.</p>
+      <div class="accordion" data-accordion>
+        <!-- Medium Voltage Distribution -->
+        <div class="accordion__item" id="mv">
+          <button class="accordion__button" data-accordion-button aria-expanded="false" aria-controls="panel-mv">
+            Medium Voltage Distribution
+          </button>
+          <div class="accordion__panel" id="panel-mv" data-accordion-panel data-active="false">
+            <p class="feature__text">We can design, develop, and build distribution overhead and underground, and maintain your lines to keep you and your world powered.</p>
+            <ul class="accordion__capabilities">
+              <li>Overhead distribution system design and installation</li>
+              <li>Underground distribution system design and installation</li>
+              <li>System maintenance and upgrades</li>
+              <li>Emergency repair and restoration</li>
+              <li>Line inspection and testing</li>
+            </ul>
+            <div class="accordion__best-for">
+              <strong>Best for:</strong> Manufacturing facilities, municipal infrastructure, warehouses, utilities, and industrial complexes requiring reliable medium voltage distribution.
             </div>
-            <div class="card">
-              <div class="feature__title">Overhead Distribution</div>
-              <p class="feature__text">Expert installation and maintenance of overhead distribution systems for manufacturing facilities, municipal infrastructure, and warehouses.</p>
-            </div>
-            <div class="card">
-              <div class="feature__title">Underground Distribution</div>
-              <p class="feature__text">Professional underground distribution services for medium- and high-voltage applications.</p>
-            </div>
+            <a class="btn btn--primary" href="./contact.html#quote">Request Quote for This Service</a>
           </div>
         </div>
 
-        <div class="tabpanel" role="tabpanel" id="panel-ind" aria-labelledby="tab-ind" data-active="false">
-          <div class="grid3">
-            <div class="card">
-              <div class="feature__title">Electrical Services</div>
-              <p class="feature__text">We have decades of experience working on industrial sites, and can provide exceptional service for any application.</p>
+        <!-- Overhead Distribution -->
+        <div class="accordion__item" id="overhead">
+          <button class="accordion__button" data-accordion-button aria-expanded="false" aria-controls="panel-overhead">
+            Overhead Distribution
+          </button>
+          <div class="accordion__panel" id="panel-overhead" data-accordion-panel data-active="false">
+            <p class="feature__text">Expert installation and maintenance of overhead distribution systems for manufacturing facilities, municipal infrastructure, and warehouses.</p>
+            <ul class="accordion__capabilities">
+              <li>Pole line installation and maintenance</li>
+              <li>Transformer installation and service</li>
+              <li>Overhead conductor installation</li>
+              <li>System upgrades and modernization</li>
+              <li>Storm damage repair</li>
+            </ul>
+            <div class="accordion__best-for">
+              <strong>Best for:</strong> Facilities requiring overhead power distribution, rural and suburban installations, and locations where overhead is the preferred method.
             </div>
-            <div class="card">
-              <div class="feature__title">Design-Build Services</div>
-              <p class="feature__text">Complete design-build services for industrial facilities, from concept to completion.</p>
+            <a class="btn btn--primary" href="./contact.html#quote">Request Quote for This Service</a>
+          </div>
+        </div>
+
+        <!-- Underground Distribution -->
+        <div class="accordion__item" id="underground">
+          <button class="accordion__button" data-accordion-button aria-expanded="false" aria-controls="panel-underground">
+            Underground Distribution
+          </button>
+          <div class="accordion__panel" id="panel-underground" data-accordion-panel data-active="false">
+            <p class="feature__text">Professional underground distribution services for medium- and high-voltage applications.</p>
+            <ul class="accordion__capabilities">
+              <li>Underground cable installation</li>
+              <li>Trenching and conduit installation</li>
+              <li>Manhole and vault construction</li>
+              <li>System testing and commissioning</li>
+              <li>Maintenance and troubleshooting</li>
+            </ul>
+            <div class="accordion__best-for">
+              <strong>Best for:</strong> Urban areas, aesthetic requirements, high-reliability needs, and locations where overhead lines are not feasible.
             </div>
-            <div class="card">
-              <div class="feature__title">Substation Construction</div>
-              <p class="feature__text">Expert electrical infrastructure construction including substations and pole lines.</p>
+            <a class="btn btn--primary" href="./contact.html#quote">Request Quote for This Service</a>
+          </div>
+        </div>
+
+        <!-- Design-Build Services -->
+        <div class="accordion__item" id="design">
+          <button class="accordion__button" data-accordion-button aria-expanded="false" aria-controls="panel-design">
+            Design-Build Services
+          </button>
+          <div class="accordion__panel" id="panel-design" data-accordion-panel data-active="false">
+            <p class="feature__text">Complete design-build services for industrial facilities, from concept to completion.</p>
+            <ul class="accordion__capabilities">
+              <li>Electrical system design and engineering</li>
+              <li>Project management and coordination</li>
+              <li>Single-source responsibility</li>
+              <li>Code compliance and permitting</li>
+              <li>Turnkey project delivery</li>
+            </ul>
+            <div class="accordion__best-for">
+              <strong>Best for:</strong> New construction projects, major renovations, facilities requiring integrated design and construction, and projects needing streamlined coordination.
             </div>
+            <a class="btn btn--primary" href="./contact.html#quote">Request Quote for This Service</a>
+          </div>
+        </div>
+
+        <!-- Substation Construction -->
+        <div class="accordion__item" id="substation">
+          <button class="accordion__button" data-accordion-button aria-expanded="false" aria-controls="panel-substation">
+            Substation Construction
+          </button>
+          <div class="accordion__panel" id="panel-substation" data-accordion-panel data-active="false">
+            <p class="feature__text">Expert electrical infrastructure construction including substations and pole lines.</p>
+            <ul class="accordion__capabilities">
+              <li>Substation design and construction</li>
+              <li>Transformer installation</li>
+              <li>Switchgear and control systems</li>
+              <li>Protection and relay systems</li>
+              <li>Testing and commissioning</li>
+            </ul>
+            <div class="accordion__best-for">
+              <strong>Best for:</strong> Utilities, large industrial facilities, municipal infrastructure, and facilities requiring high-voltage power transformation.
+            </div>
+            <a class="btn btn--primary" href="./contact.html#quote">Request Quote for This Service</a>
+          </div>
+        </div>
+
+        <!-- Electrical Services -->
+        <div class="accordion__item" id="industrial">
+          <button class="accordion__button" data-accordion-button aria-expanded="false" aria-controls="panel-industrial">
+            Electrical Services
+          </button>
+          <div class="accordion__panel" id="panel-industrial" data-accordion-panel data-active="false">
+            <p class="feature__text">We have decades of experience working on industrial sites, and can provide exceptional service for any application.</p>
+            <ul class="accordion__capabilities">
+              <li>Preventive maintenance programs</li>
+              <li>Emergency repair services</li>
+              <li>Motor control and automation</li>
+              <li>Power quality analysis</li>
+              <li>24/7 emergency response</li>
+            </ul>
+            <div class="accordion__best-for">
+              <strong>Best for:</strong> Manufacturing facilities, processing plants, warehouses, and any industrial operation requiring reliable electrical service and maintenance.
+            </div>
+            <a class="btn btn--primary" href="./contact.html#quote">Request Quote for This Service</a>
           </div>
         </div>
       </div>
@@ -62,10 +218,44 @@
 </main>
 
 <footer class="footer">
-  <div class="container footer__grid">
-    <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
-    <div>
-      <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__section">
+        <h3 class="footer__title">N Line Electric</h3>
+        <p>Exemplary Electrical Services for Industry & Commerce</p>
+        <p style="margin-top:var(--space-sm);">Licensed in Colorado & Wyoming</p>
+      </div>
+      <div class="footer__section">
+        <h3 class="footer__title">Contact</h3>
+        <address style="font-style:normal;">
+          14293 Longs Peak Court<br />
+          Longmont, CO 80504<br /><br />
+          Denver: <a href="tel:3037021147">(303) 702-1147</a><br />
+          Fort Collins: <a href="tel:9705356253">(970) 535-6253</a><br />
+          Email: <a href="mailto:info@nlineelectric.com">info@nlineelectric.com</a>
+        </address>
+      </div>
+      <div class="footer__section">
+        <h3 class="footer__title">Quick Links</h3>
+        <ul class="footer__links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./about.html">About You</a></li>
+          <li><a href="./safety.html">Safety</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h3 class="footer__title">Service Area</h3>
+        <p>Colorado & Wyoming</p>
+        <p style="margin-top:var(--space-sm);">Available 24/7 for emergency service</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© <span id="year"></span> N Line Electric. All rights reserved.</div>
+      <div style="margin-top:var(--space-xs);">
+        <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -75,8 +265,8 @@
 
 <script src="./assets/js/header.js"></script>
 <script src="./assets/js/site.js"></script>
+<script src="./assets/js/accordion.js"></script>
+<script src="./assets/js/industry-modal.js"></script>
 <script src="./assets/js/page-transition.js"></script>
 </body>
-</html>
-
 </html>

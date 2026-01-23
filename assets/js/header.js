@@ -12,7 +12,10 @@
     // Determine which page is active
     const activePage = currentPagePath.toLowerCase();
     const isHome = activePage === 'index.html' || activePage === '';
-    const isAbout = activePage === 'about.html';
+    const isAboutYou = activePage === 'about.html';
+    const isAboutUs = activePage === 'meeting-your-needs.html' || activePage === 'serving-your-industry.html';
+    const isMeetingNeeds = activePage === 'meeting-your-needs.html';
+    const isServingIndustry = activePage === 'serving-your-industry.html';
     const isContact = activePage === 'contact.html';
     const isSafety = activePage === 'safety.html';
     const isServices = activePage === 'services.html';
@@ -50,9 +53,16 @@
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav__link" ${isHome ? 'aria-current="page"' : ''} href="./index.html">Home</a>
       <a class="nav__link" ${isServices ? 'aria-current="page"' : ''} href="./services.html">Services</a>
-      <a class="nav__link" ${isAbout ? 'aria-current="page"' : ''} href="./about.html">About</a>
+      <a class="nav__link" ${isAboutYou ? 'aria-current="page"' : ''} href="./about.html">About You</a>
+      <div class="dropdown">
+        <button class="nav__btn" data-dropdown-button aria-expanded="${isAboutUs ? 'true' : 'false'}" aria-controls="dropdown-about-us">About Us</button>
+        <div class="dropdown__menu" id="dropdown-about-us" data-dropdown-menu data-open="${isAboutUs ? 'true' : 'false'}">
+          <a class="dropdown__item" ${isMeetingNeeds ? 'aria-current="page"' : ''} href="./meeting-your-needs.html">Meeting Your Needs</a>
+          <a class="dropdown__item" ${isServingIndustry ? 'aria-current="page"' : ''} href="./serving-your-industry.html">Serving Your Industry</a>
+        </div>
+      </div>
       <a class="nav__link" ${isSafety ? 'aria-current="page"' : ''} href="./safety.html">Safety</a>
-      <a class="nav__link" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact</a>
+      <a class="btn btn--primary" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact</a>
     </nav>
 
     <div class="mobile-toggle">
@@ -64,9 +74,16 @@
     <div id="mobilePanel" class="mobile-panel" data-mobile-panel data-open="false">
       <a href="./index.html">Home</a>
       <a href="./services.html">Services</a>
-      <a href="./about.html">About</a>
+      <a href="./about.html">About You</a>
+      <div class="dropdown">
+        <button class="nav__btn" data-dropdown-button aria-expanded="false" aria-controls="mobile-dropdown-about-us">About Us</button>
+        <div class="dropdown__menu" id="mobile-dropdown-about-us" data-dropdown-menu data-open="false">
+          <a class="dropdown__item" href="./meeting-your-needs.html">Meeting Your Needs</a>
+          <a class="dropdown__item" href="./serving-your-industry.html">Serving Your Industry</a>
+        </div>
+      </div>
       <a href="./safety.html">Safety</a>
-      <a href="./contact.html">Contact</a>
+      <a class="btn btn--primary" href="./contact.html">Contact</a>
     </div>
   </div>
 </header>`;

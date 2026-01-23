@@ -31,7 +31,7 @@
     setStatus("", false);
 
     // honeypot
-    const hp = String(form.querySelector('input[name="company"]')?.value || "");
+    const hp = String(form.querySelector('input[name="website"]')?.value || "");
     if (hp.trim()) {
       setStatus("Message sent!", false);
       form.reset();
@@ -46,7 +46,7 @@
     }
 
     if (!endpoint || endpoint.includes("REPLACE_ME")) {
-      setStatus("Set your Formspree endpoint in assets/js/config.js.", true);
+      setStatus("Form submission is being configured. Please call us directly at (303) 702-1147.", true);
       return;
     }
 
@@ -63,6 +63,10 @@
         body: JSON.stringify({
           name: String(data.name || ""),
           email: String(data.email || ""),
+          phone: String(data.phone || ""),
+          company: String(data.company || ""),
+          "preferred-contact": String(data["preferred-contact"] || ""),
+          "job-location": String(data["job-location"] || ""),
           subject: String(data.subject || ""),
           message: String(data.message || "")
         })

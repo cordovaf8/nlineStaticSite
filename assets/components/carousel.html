@@ -1,0 +1,71 @@
+<!-- 
+  Carousel Component - Reusable Image Carousel
+  
+  Usage:
+  1. Copy the HTML structure below
+  2. Include carousel.js in your page: <script src="./assets/js/carousel.js"></script>
+  3. Customize images, add/remove slides as needed
+  
+  Configuration (via data attributes on [data-carousel]):
+  - data-auto-rotate="false" - Disable auto-rotation (default: true)
+  - data-rotate-interval="3000" - Set rotation interval in ms (default: 5000)
+  - data-pause-on-hover="false" - Disable pause on hover (default: true)
+-->
+
+<section class="carousel-section">
+  <div class="carousel" data-carousel data-auto-rotate="true" data-rotate-interval="5000" data-pause-on-hover="true">
+    <div class="carousel__track" data-carousel-track>
+      <div class="carousel__slide" data-carousel-slide>
+        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&q=80" alt="Industrial electrical work" />
+      </div>
+      <div class="carousel__slide" data-carousel-slide>
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80" alt="Electrical installation" />
+      </div>
+      <div class="carousel__slide" data-carousel-slide>
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&q=80" alt="Substation construction" />
+      </div>
+      <div class="carousel__slide" data-carousel-slide>
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80" alt="Industrial maintenance" />
+      </div>
+    </div>
+    
+    <!-- Optional: Navigation buttons -->
+    <button class="carousel__nav carousel__nav--prev" data-carousel-prev aria-label="Previous slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <button class="carousel__nav carousel__nav--next" data-carousel-next aria-label="Next slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+    
+    <!-- Slide indicators -->
+    <div class="carousel__indicators" data-carousel-indicators role="tablist" aria-label="Carousel slides">
+      <button class="carousel__indicator" data-carousel-indicator role="tab" aria-label="Go to slide 1"></button>
+      <button class="carousel__indicator" data-carousel-indicator role="tab" aria-label="Go to slide 2"></button>
+      <button class="carousel__indicator" data-carousel-indicator role="tab" aria-label="Go to slide 3"></button>
+      <button class="carousel__indicator" data-carousel-indicator role="tab" aria-label="Go to slide 4"></button>
+    </div>
+  </div>
+</section>
+
+<!-- 
+  Minimal version (without navigation buttons):
+  
+  <div class="carousel" data-carousel>
+    <div class="carousel__track" data-carousel-track>
+      <div class="carousel__slide" data-carousel-slide>
+        <img src="image1.jpg" alt="Description" />
+      </div>
+      <div class="carousel__slide" data-carousel-slide>
+        <img src="image2.jpg" alt="Description" />
+      </div>
+    </div>
+    <div class="carousel__indicators" data-carousel-indicators>
+      <button class="carousel__indicator" data-carousel-indicator></button>
+      <button class="carousel__indicator" data-carousel-indicator></button>
+    </div>
+  </div>
+-->

@@ -19,6 +19,7 @@
     const isContact = activePage === 'contact.html';
     const isSafety = activePage === 'safety.html';
     const isServices = activePage === 'services.html';
+    const isPictures = activePage === 'pictures.html';
 
     const headerHTML = `
 <header class="header">
@@ -62,6 +63,7 @@
         </div>
       </div>
       <a class="nav__link" ${isSafety ? 'aria-current="page"' : ''} href="./safety.html">Safety</a>
+      <a class="nav__link" ${isPictures ? 'aria-current="page"' : ''} href="./pictures.html">Pictures</a>
       <a class="btn btn--primary" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact</a>
     </nav>
 
@@ -83,6 +85,7 @@
         </div>
       </div>
       <a href="./safety.html">Safety</a>
+      <a href="./pictures.html">Pictures</a>
       <a class="btn btn--primary" href="./contact.html">Contact</a>
     </div>
   </div>

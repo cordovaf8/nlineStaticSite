@@ -626,6 +626,60 @@ button.industry-chip[aria-selected="true"]{
   }
 }
 
+/* Team Grid */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:var(--space-lg);
+  margin-top:var(--space-lg);
+}
+.team-member{
+  text-align:center;
+}
+.team-member__photo{
+  width:200px;
+  height:200px;
+  margin:0 auto var(--space-md);
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid var(--primary);
+  background:var(--card);
+}
+.team-member__photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.team-member__name{
+  font-size:20px;
+  font-weight:700;
+  margin:0 0 var(--space-xs);
+  color:var(--primary);
+}
+.team-member__title{
+  font-size:16px;
+  color:var(--muted);
+  margin:0 0 var(--space-sm);
+  font-weight:600;
+}
+.team-member__bio{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--text);
+  margin:0;
+}
+@media (max-width: 920px){
+  .team-grid{
+    grid-template-columns:1fr;
+    gap:var(--space-md);
+  }
+  .team-member__photo{
+    width:150px;
+    height:150px;
+  }
+}
+
 /* Lightbox */
 .lightbox{
   position:fixed;

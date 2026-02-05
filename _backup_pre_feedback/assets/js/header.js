@@ -54,6 +54,7 @@
 
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav__link" ${isHome ? 'aria-current="page"' : ''} href="./index.html">Home</a>
+      <a class="nav__link" ${isServices ? 'aria-current="page"' : ''} href="./services.html">Services</a>
       <a class="nav__link" ${isAboutYou ? 'aria-current="page"' : ''} href="./about.html">About You</a>
       <div class="dropdown">
         <button class="nav__btn" data-dropdown-button aria-expanded="${isAboutUs ? 'true' : 'false'}" aria-controls="dropdown-about-us">About Us</button>
@@ -65,7 +66,7 @@
       <a class="nav__link" ${isSafety ? 'aria-current="page"' : ''} href="./safety.html">Safety</a>
       <a class="nav__link" ${isPictures ? 'aria-current="page"' : ''} href="./pictures.html">Pictures</a>
       <a class="nav__link" ${isMeetTeam ? 'aria-current="page"' : ''} href="./meet-the-team.html">Meet the Team</a>
-      <a class="btn btn--primary" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact Us</a>
+      <a class="btn btn--primary" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact</a>
     </nav>
 
     <div class="mobile-toggle">
@@ -76,6 +77,7 @@
   <div class="container">
     <div id="mobilePanel" class="mobile-panel" data-mobile-panel data-open="false">
       <a href="./index.html">Home</a>
+      <a href="./services.html">Services</a>
       <a href="./about.html">About You</a>
       <div class="dropdown">
         <button class="nav__btn" data-dropdown-button aria-expanded="false" aria-controls="mobile-dropdown-about-us">About Us</button>
@@ -87,7 +89,7 @@
       <a href="./safety.html">Safety</a>
       <a href="./pictures.html">Pictures</a>
       <a href="./meet-the-team.html">Meet the Team</a>
-      <a class="nav__link" href="./contact.html">Contact Us</a>
+      <a class="btn btn--primary" href="./contact.html">Contact</a>
     </div>
   </div>
 </header>`;

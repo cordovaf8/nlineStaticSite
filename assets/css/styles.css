@@ -18,9 +18,9 @@ body.accordion-scrolling {
   overflow: hidden;
 }
 :root{
-  --bg:#ffefdf; /* softer cream */
+  --bg:#f5f5f5; /* very light grey */
   --card:#fff;
-  --card-alt:#faf5ef;
+  --card-alt:#f0f0f0;
   --border:#e6dbcf;
   --text:#1a1a1a;
   --muted:#666666;
@@ -79,7 +79,7 @@ a:hover{text-decoration:underline;}
 
 .header{
   position:sticky; top:0; z-index:50;
-  background:rgba(255,239,223,.97);
+  background:rgba(245,245,245,.97);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid var(--border);
   transition:transform 0.3s ease-in-out;

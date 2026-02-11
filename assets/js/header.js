@@ -51,7 +51,7 @@
         <div class="brand__tag">Industrial &amp; Medium Voltage Electrical Contractor | 600V–35kV</div>
       </a>
       <div style="display:flex; align-items:center; gap:12px;">
-        <a class="btn btn--primary" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact Us</a>
+        <a class="btn btn--primary header__contact-btn" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact Us</a>
         <div class="mobile-toggle">
           <button type="button" data-mobile-toggle aria-expanded="false" aria-controls="mobilePanel">Menu</button>
         </div>

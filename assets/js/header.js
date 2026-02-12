@@ -104,8 +104,12 @@
   }
 
   // Auto-render on load if data-header attribute is present
-  // Render synchronously if DOM is ready, otherwise wait for DOMContentLoaded
+  // Home page uses its own static header (header--home), so skip shared header there
   function initHeader() {
+    const path = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    if (path === '' || path === 'index.html') {
+      return;
+    }
     const headerTarget = document.querySelector('[data-header]');
     if (headerTarget) {
       renderHeader();

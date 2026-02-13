@@ -51,7 +51,6 @@
         <div class="brand__tag">Industrial &amp; Medium Voltage Electrical Contractor | 600V–35kV</div>
       </a>
       <div style="display:flex; align-items:center; gap:12px;">
-        <a class="btn btn--primary header__contact-btn" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact Us</a>
         <div class="mobile-toggle">
           <button type="button" data-mobile-toggle aria-expanded="false" aria-controls="mobilePanel">Menu</button>
         </div>
@@ -65,6 +64,7 @@
         <a class="nav__link" ${isSafety ? 'aria-current="page"' : ''} href="./safety.html">Safety</a>
         <a class="nav__link" ${isPictures ? 'aria-current="page"' : ''} href="./pictures.html">Pictures</a>
         <a class="nav__link" ${isMeetTeam ? 'aria-current="page"' : ''} href="./meet-the-team.html">Meet the Team</a>
+        <a class="nav__link link-contact-us" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact Us</a>
       </nav>
     </div>
   </div>
@@ -104,12 +104,37 @@
   }
 
   // Auto-render on load if data-header attribute is present
-  // Home page uses its own static header (header--home), so skip shared header there
+  // Home page: use reusable header only on mobile; other pages always use it
+  const MOBILE_BREAKPOINT = 920;
+
   function initHeader() {
     const path = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    if (path === '' || path === 'index.html') {
+    const isHome = path === '' || path === 'index.html';
+
+    if (isHome) {
+      const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+      function updateHomeHeader() {
+        const placeholder = document.querySelector('[data-header]');
+        if (mq.matches) {
+          if (placeholder && placeholder.tagName !== 'HEADER') {
+            renderHeader('index.html');
+            const injected = document.querySelector('body > header.header:not(.header--home)');
+            if (injected) initScrollHide();
+          }
+        } else {
+          const injected = document.querySelector('body > header.header:not(.header--home)');
+          if (injected) {
+            const div = document.createElement('div');
+            div.setAttribute('data-header', '');
+            injected.replaceWith(div);
+          }
+        }
+      }
+      updateHomeHeader();
+      mq.addEventListener('change', updateHomeHeader);
       return;
     }
+
     const headerTarget = document.querySelector('[data-header]');
     if (headerTarget) {
       renderHeader();

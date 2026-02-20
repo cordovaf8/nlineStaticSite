@@ -1118,7 +1118,7 @@ select.input{
   font-size:clamp(26px, 3.2vw, 36px);
   line-height:1.15;
   font-weight:800;
-  margin:0 0 var(--space-md);
+  margin:65px 0 var(--space-md);
   color:#fff;
   text-transform:uppercase;
   letter-spacing:0.02em;

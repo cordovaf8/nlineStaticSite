@@ -48,7 +48,7 @@
     <div class="header__row-top">
       <a class="brand" href="./index.html">
         <img class="brand__logo" src="./assets/images/n-line-logo.png" alt="N Line Electric" />
-        <div class="brand__tag">Industrial &amp; Medium Voltage Electrical Contractor | 600V–35kV</div>
+        <div class="brand__tag">Medium Voltage Utility &amp; Industrial Electrical Contractor | 110V–35kV</div>
       </a>
       <div style="display:flex; align-items:center; gap:12px;">
         <div class="mobile-toggle">
@@ -61,11 +61,8 @@
         <a class="nav__link" ${isHome ? 'aria-current="page"' : ''} href="./index.html">Home</a>
         <a class="nav__link" ${isServices ? 'aria-current="page"' : ''} href="./services.html">Services</a>
         <a class="nav__link" ${isAboutYou ? 'aria-current="page"' : ''} href="./about.html">About You</a>
-        <a class="nav__link" ${isAboutUs ? 'aria-current="page"' : ''} href="./about-us.html">About Us</a>
         <a class="nav__link" ${isSafety ? 'aria-current="page"' : ''} href="./safety.html">Safety</a>
-        <a class="nav__link" ${isPictures ? 'aria-current="page"' : ''} href="./pictures.html">Pictures</a>
         <a class="nav__link" ${isMeetTeam ? 'aria-current="page"' : ''} href="./meet-the-team.html">Meet the Team</a>
-        <a class="nav__link link-contact-us" ${isContact ? 'aria-current="page"' : ''} href="./contact.html">Contact Us</a>
       </nav>
     </div>
   </div>
@@ -75,11 +72,8 @@
       <a href="./index.html">Home</a>
       <a href="./services.html">Services</a>
       <a href="./about.html">About You</a>
-      <a href="./about-us.html">About Us</a>
       <a href="./safety.html">Safety</a>
-      <a href="./pictures.html">Pictures</a>
       <a href="./meet-the-team.html">Meet the Team</a>
-      <a class="link-contact-us" href="./contact.html">Contact Us</a>
     </div>
   </div>
 </header>`;

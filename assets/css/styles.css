@@ -174,11 +174,8 @@ main.container.container--hero{background:transparent;}
   font-weight:700;
 }
 
-/* Services, About You, About Us, Safety: same hero + white menu over image */
-.page-services .header,
-.page-about .header,
-.page-about-us .header,
-.page-safety .header{
+/* Overlay header: hero pages (Services, About, About Us, Safety) – desktop only, over hero image like home */
+.header--overlay{
   position:absolute;
   top:0; left:0; right:0;
   z-index:50;
@@ -186,58 +183,19 @@ main.container.container--hero{background:transparent;}
   backdrop-filter:none;
   border-bottom:none;
 }
-.page-services .header .header__inner,
-.page-about .header .header__inner,
-.page-about-us .header .header__inner,
-.page-safety .header .header__inner{padding:10px 0 12px; gap:10px;}
-.page-services .header .header__top,
-.page-about .header .header__top,
-.page-about-us .header .header__top,
-.page-safety .header .header__top{background:transparent; border-bottom:none; padding:4px 0;}
-.page-services .header .header__contact-link,
-.page-services .header .header__social-link,
-.page-about .header .header__contact-link,
-.page-about .header .header__social-link,
-.page-about-us .header .header__contact-link,
-.page-about-us .header .header__social-link,
-.page-safety .header .header__contact-link,
-.page-safety .header .header__social-link{color:rgba(255,255,255,0.95);}
-.page-services .header .header__contact-link:hover,
-.page-services .header .header__social-link:hover,
-.page-about .header .header__contact-link:hover,
-.page-about .header .header__social-link:hover,
-.page-about-us .header .header__contact-link:hover,
-.page-about-us .header .header__social-link:hover,
-.page-safety .header .header__contact-link:hover,
-.page-safety .header .header__social-link:hover{color:#fff;}
-.page-services .header .brand__tag,
-.page-about .header .brand__tag,
-.page-about-us .header .brand__tag,
-.page-safety .header .brand__tag{color:rgba(255,255,255,0.9);}
-.page-services .header .nav__link,
-.page-about .header .nav__link,
-.page-about-us .header .nav__link,
-.page-safety .header .nav__link{color:#fff; font-weight:700;}
-.page-services .header .nav__link:hover,
-.page-about .header .nav__link:hover,
-.page-about-us .header .nav__link:hover,
-.page-safety .header .nav__link:hover{color:rgba(255,255,255,0.9); text-decoration:underline;}
-.page-services .header .nav__link[aria-current="page"],
-.page-about .header .nav__link[aria-current="page"],
-.page-about-us .header .nav__link[aria-current="page"],
-.page-safety .header .nav__link[aria-current="page"]{color:#fff; font-weight:700;}
-.page-services .header .nav__link.link-contact-us,
-.page-about .header .nav__link.link-contact-us,
-.page-about-us .header .nav__link.link-contact-us,
-.page-safety .header .nav__link.link-contact-us{color:rgba(255,255,255,0.95) !important;}
-.page-services .header .nav__link.link-contact-us:hover,
-.page-about .header .nav__link.link-contact-us:hover,
-.page-about-us .header .nav__link.link-contact-us:hover,
-.page-safety .header .nav__link.link-contact-us:hover{color:rgba(255,255,255,0.95) !important; text-decoration:none;}
-.page-services .header .mobile-toggle button,
-.page-about .header .mobile-toggle button,
-.page-about-us .header .mobile-toggle button,
-.page-safety .header .mobile-toggle button{color:#fff; font-weight:700;}
+.header--overlay .header__inner{padding:10px 0 12px; gap:10px;}
+.header--overlay .header__top{background:transparent; border-bottom:none; padding:4px 0;}
+.header--overlay .header__contact-link,
+.header--overlay .header__social-link{color:rgba(255,255,255,0.95);}
+.header--overlay .header__contact-link:hover,
+.header--overlay .header__social-link:hover{color:#fff;}
+.header--overlay .brand__tag{color:rgba(255,255,255,0.9);}
+.header--overlay .nav__link{color:#fff; font-weight:700;}
+.header--overlay .nav__link:hover{color:rgba(255,255,255,0.9); text-decoration:underline;}
+.header--overlay .nav__link[aria-current="page"]{color:#fff; font-weight:700;}
+.header--overlay .nav__link.link-contact-us{color:rgba(255,255,255,0.95) !important;}
+.header--overlay .nav__link.link-contact-us:hover{color:rgba(255,255,255,0.95) !important; text-decoration:none;}
+.header--overlay .mobile-toggle button{color:#fff; font-weight:700;}
 
 .header__top{
   background:var(--card);
@@ -1826,9 +1784,27 @@ button.industry-chip[aria-selected="true"]{
 
 @media (min-width: 921px){
   body:has(> .header--home) > header.header:not(.header--home){display:none;}
+  /* Hero pages: hide reusable header on desktop so overlay header shows over hero */
+  body:has(> .header--overlay) > header.header--reusable{display:none;}
+}
+/* Home hero: stack text + Get in touch from 1024px down (tablet + mobile) */
+@media (max-width: 1024px){
+  .hero-banner__content--two-col{
+    display:grid;
+    grid-template-columns:1fr;
+    padding-top:96px;
+    width:100%;
+    max-width:100%;
+  }
+  .hero-banner__copy{text-align:center;}
+  .hero-banner__lead{max-width:none;}
+  .hero-contact-tile{margin-right:0; max-width:none; width:100%; min-width:0;}
+  .hero-contact-tile__form{grid-template-columns:1fr;}
 }
 @media (max-width: 920px){
   .header--home{display:none;}
+  /* Hero pages: hide overlay header on mobile so reusable header shows */
+  .header--overlay{display:none;}
   .hero__grid{grid-template-columns:1fr;}
   .grid3{grid-template-columns:1fr;}
   .kpis{grid-template-columns:1fr;}
@@ -1854,11 +1830,13 @@ button.industry-chip[aria-selected="true"]{
   }
   .hero-banner{min-height:400px;}
   .hero-banner--services{min-height:250px;}
-  .hero-banner__content--two-col{grid-template-columns:1fr; padding-top:96px;}
+  /* Home hero: stack headline + lead above Get in touch form on mobile */
+  .hero-banner__content--two-col{grid-template-columns:1fr; padding-top:96px; width:100%; max-width:100%;}
   .hero-banner__content--center{padding-top:6rem;}
   .hero-banner__copy{text-align:center;}
   .hero-banner__lead{max-width:none;}
-  .hero-contact-tile{margin-right:0; max-width:none;}
+  .hero-contact-tile{margin-right:0; max-width:none; width:100%; min-width:0;}
+  .hero-contact-tile__form{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
   .projects-grid{grid-template-columns:1fr;}
   .testimonials{grid-template-columns:1fr;}

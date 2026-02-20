@@ -59,6 +59,7 @@
     <div class="header__row-nav">
       <nav class="nav" aria-label="Primary navigation">
         <a class="nav__link" ${isHome ? 'aria-current="page"' : ''} href="./index.html">Home</a>
+        <a class="nav__link" ${isServices ? 'aria-current="page"' : ''} href="./services.html">Services</a>
         <a class="nav__link" ${isAboutYou ? 'aria-current="page"' : ''} href="./about.html">About You</a>
         <a class="nav__link" ${isAboutUs ? 'aria-current="page"' : ''} href="./about-us.html">About Us</a>
         <a class="nav__link" ${isSafety ? 'aria-current="page"' : ''} href="./safety.html">Safety</a>
@@ -72,6 +73,7 @@
   <div class="container">
     <div id="mobilePanel" class="mobile-panel" data-mobile-panel data-open="false">
       <a href="./index.html">Home</a>
+      <a href="./services.html">Services</a>
       <a href="./about.html">About You</a>
       <a href="./about-us.html">About Us</a>
       <a href="./safety.html">Safety</a>

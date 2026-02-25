@@ -669,6 +669,7 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 }
 /* Alternate: even blocks (--alt) have image left, text right */
 .service-block--alt .service-block__content{order:2;}
+.service-block--alt .service-block__right-col{order:1;}
 .service-block--alt .service-block__image-wrap{order:1;}
 .service-block__content{
   min-width:0;
@@ -741,6 +742,52 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 .service-block__expandable .btn{
   margin-top:var(--space-md);
 }
+/* Right column: main image + completed project (below image when expanded) */
+.service-block__right-col{
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-md);
+  align-self:start;
+  min-width:0;
+}
+.service-block__right-col .service-block__image-wrap{
+  flex-shrink:0;
+  order:0;
+}
+.service-block__right-col .service-block__completed-project{
+  order:1;
+}
+.service-block__completed-project{
+  display:none;
+  margin-top:0;
+  padding-top:var(--space-md);
+  border-top:1px solid var(--border);
+}
+.service-block.is-expanded .service-block__completed-project{
+  display:block;
+}
+.service-block__project-title{
+  font-size:clamp(18px, 2vw, 20px);
+  font-weight:700;
+  color:var(--accent-blue);
+  margin:0 0 var(--space-sm);
+  letter-spacing:0.05em;
+}
+.service-block__project-image{
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  display:block;
+  margin-bottom:var(--space-sm);
+}
+.service-block__project-blurb{
+  font-size:clamp(15px, 1.6vw, 16px);
+  color:var(--muted);
+  line-height:1.55;
+  margin:0;
+  max-width:65ch;
+}
 .service-block__image-wrap{
   position:relative;
   min-height:200px;
@@ -762,6 +809,23 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 }
 .service-block--text-only .service-block__desc{
   max-width:none;
+}
+/* Services page: main image always visible, fixed size; never shrink or hide */
+body.page-services .service-block__right-col .service-block__image-wrap{
+  align-self:stretch;
+  width:100%;
+  height:360px;
+  min-height:360px;
+  max-height:360px;
+  flex-shrink:0;
+  display:block;
+  visibility:visible;
+  opacity:1;
+}
+body.page-services .service-block.is-expanded .service-block__right-col .service-block__image-wrap{
+  display:block;
+  visibility:visible;
+  opacity:1;
 }
 @media (max-width: 768px){
   .service-block__inner{

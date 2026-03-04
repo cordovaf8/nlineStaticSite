@@ -61,6 +61,8 @@ a:hover{text-decoration:underline;}
 strong, b{color:var(--accent-blue);}
 .hero-banner strong, .hero-banner b, .btn strong, .btn b{color:inherit;}
 .container{max-width:1200px; margin:0 auto; padding:0 24px;}
+.header__top-inner.container,
+.header .header__top-inner{padding:0 24px 0 0 !important;}
 /* Center content: white background; body/grey shows on sides */
 main .container,
 main.container{
@@ -150,6 +152,9 @@ main.container.container--hero{background:transparent;}
 .header--home .nav__link[aria-current="page"]{
   color:#fff;
   font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:2px;
 }
 .header--home .nav__link.link-contact-us{
   color:rgba(255,255,255,0.95) !important;
@@ -181,7 +186,13 @@ main.container.container--hero{background:transparent;}
 .header--overlay .brand__tag{color:rgba(255,255,255,0.9);}
 .header--overlay .nav__link{color:#fff; font-weight:700;}
 .header--overlay .nav__link:hover{color:rgba(255,255,255,0.9); text-decoration:underline;}
-.header--overlay .nav__link[aria-current="page"]{color:#fff; font-weight:700;}
+.header--overlay .nav__link[aria-current="page"]{
+  color:#fff;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:2px;
+}
 .header--overlay .nav__link.link-contact-us{color:rgba(255,255,255,0.95) !important;}
 .header--overlay .nav__link.link-contact-us:hover{color:rgba(255,255,255,0.95) !important; text-decoration:none;}
 .header--overlay .mobile-toggle button{color:#fff; font-weight:700;}
@@ -194,12 +205,13 @@ main.container.container--hero{background:transparent;}
 }
 .header__top-inner{
   display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding-left:0;
 }
 .header__contact{
   display:flex; align-items:center; gap:14px; flex-wrap:wrap;
   background:var(--accent-blue);
   border-radius:12px;
-  padding:8px 20px;
+  padding:8px 20px 8px 0;
   box-shadow:0 10px 40px rgba(0,0,0,0.3);
 }
 .header__contact .header__contact-link{
@@ -264,6 +276,9 @@ main.container.container--hero{background:transparent;}
   white-space:nowrap;
   transition:color 0.2s, background 0.2s, font-weight 0.2s;
 }
+.nav .nav__link:first-child{
+  padding-left:0;
+}
 .nav__link:hover{
   color:var(--accent-red);
   text-decoration:none;
@@ -273,7 +288,9 @@ main.container.container--hero{background:transparent;}
   background:transparent;
   border:none;
   box-shadow:none;
-  text-decoration:none;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:2px;
   color:var(--accent-red);
   font-weight:700;
   font-size:1.2rem;
@@ -330,6 +347,16 @@ a.link-contact-us:hover{
   text-decoration:none;
 }
 .mobile-panel button{cursor:pointer; font:inherit;}
+.mobile-panel a:first-child{
+  padding-left:0;
+}
+.mobile-panel a[aria-current="page"]{
+  color:var(--accent-red);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+  text-decoration-thickness:2px;
+}
 
 .hero{padding:34px 0 14px;}
 .card{
@@ -913,7 +940,7 @@ select.input{
 /* Two-column hero: left = copy (up), right = contact tile; content left-aligned with nav "Home" */
 .hero-banner__content--two-col{
   display:grid;
-  grid-template-columns:1fr 1.1fr;
+  grid-template-columns:1.35fr 0.95fr;
   gap:var(--space-xl);
   align-items:flex-start;
   justify-content:start;
@@ -926,6 +953,9 @@ select.input{
 .hero-banner__copy{
   color:#fff;
   padding-top:0;
+}
+.hero-banner__headline--two-line{
+  line-height:1.2;
 }
 .hero-banner__headline{
   font-size:clamp(26px, 3.2vw, 36px);
@@ -974,10 +1004,12 @@ select.input{
   border-radius:12px;
   padding:14px 28px 20px;
   box-shadow:0 10px 40px rgba(0,0,0,.3);
-  opacity:0.9;
-  margin-top:100px;
-  margin-right:min(8vw, 120px);
-  max-width:420px;
+  opacity:0.95;
+  margin-top:80px;
+  margin-left:auto;
+  margin-right:min(2vw, 40px);
+  max-width:400px;
+  justify-self:end;
   min-width:380px;
 }
 .hero-contact-tile__title{
@@ -1388,6 +1420,15 @@ button.industry-chip[aria-selected="true"]{
   margin-bottom:var(--space-xs);
 }
 
+/* NCSB / NCSCB certification logo inline with list text */
+.ncscb-logo{
+  vertical-align:middle;
+  height:1.5em;
+  width:auto;
+  margin-right:var(--space-xs);
+  display:inline-block;
+}
+
 /* Contact 2-column layout */
 .contact-grid{
   display:grid;
@@ -1435,11 +1476,16 @@ button.industry-chip[aria-selected="true"]{
 .footer__grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-  gap:var(--space-md);
+  gap:var(--space-lg);
   margin-bottom:var(--space-md);
 }
 .footer__section{
-  margin-bottom:var(--space-md);
+  min-width:0;
+}
+@media (min-width: 768px){
+  .footer__grid{
+    grid-template-columns:repeat(4, 1fr);
+  }
 }
 .footer__title{
   font-weight:700;

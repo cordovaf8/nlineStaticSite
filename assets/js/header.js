@@ -48,7 +48,7 @@
     <div class="header__row-top">
       <a class="brand" href="./index.html">
         <img class="brand__logo" src="./assets/images/n-line-logo.png" alt="N Line Electric" />
-        <div class="brand__tag">Medium Voltage Utility &amp; Industrial Electrical Contractor | 110V–35kV</div>
+        <div class="brand__tag">Medium Voltage Utility &amp; Industrial Electrical Contractor</div>
       </a>
       <div style="display:flex; align-items:center; gap:12px;">
         <div class="mobile-toggle">
@@ -69,11 +69,11 @@
 
   <div class="container">
     <div id="mobilePanel" class="mobile-panel" data-mobile-panel data-open="false">
-      <a href="./index.html">Home</a>
-      <a href="./services.html">Services</a>
-      <a href="./about.html">About You</a>
-      <a href="./safety.html">Safety</a>
-      <a href="./meet-the-team.html">Meet the Team</a>
+      <a href="./index.html" ${isHome ? 'aria-current="page"' : ''}>Home</a>
+      <a href="./services.html" ${isServices ? 'aria-current="page"' : ''}>Services</a>
+      <a href="./about.html" ${isAboutYou ? 'aria-current="page"' : ''}>About You</a>
+      <a href="./safety.html" ${isSafety ? 'aria-current="page"' : ''}>Safety</a>
+      <a href="./meet-the-team.html" ${isMeetTeam ? 'aria-current="page"' : ''}>Meet the Team</a>
     </div>
   </div>
 </header>`;

@@ -947,7 +947,7 @@ select.input{
   max-width:min(1440px, 78vw);
   width:100%;
   padding:140px var(--space-xl) var(--space-xl);
-  padding-left:max(24px, calc(50vw - 576px));
+  padding-left:max(24px, calc(48.5vw - 576px));
   text-align:left;
 }
 .hero-banner__copy{

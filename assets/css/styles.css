@@ -940,11 +940,11 @@ select.input{
 /* Two-column hero: left = copy (up), right = contact tile; content left-aligned with nav "Home" */
 .hero-banner__content--two-col{
   display:grid;
-  grid-template-columns:1.35fr 0.95fr;
+  grid-template-columns:2.5fr 0.75fr;
   gap:var(--space-xl);
   align-items:flex-start;
   justify-content:start;
-  max-width:1200px;
+  max-width:min(1440px, 78vw);
   width:100%;
   padding:140px var(--space-xl) var(--space-xl);
   padding-left:max(24px, calc(50vw - 576px));
@@ -958,7 +958,7 @@ select.input{
   line-height:1.2;
 }
 .hero-banner__headline{
-  font-size:clamp(26px, 3.2vw, 36px);
+  font-size:clamp(26px, 3.2vw, 30px);
   line-height:1.15;
   font-weight:800;
   margin:65px 0 var(--space-md);

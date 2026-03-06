@@ -1413,7 +1413,6 @@ button.industry-chip[aria-selected="true"]{
 .accordion__best-for{
   margin:var(--space-sm) 0;
   padding:var(--space-sm);
-  background:#fff;
   border-radius:8px;
   font-size:17.5px;
 }

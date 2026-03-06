@@ -24,7 +24,7 @@
       
       currentIndex = index;
       lightboxImage.src = images[currentIndex];
-      lightboxImage.alt = pictureItems[currentIndex]?.querySelector('img')?.alt || 'N Line Electric project';
+      lightboxImage.alt = pictureItems[currentIndex]?.querySelector('img')?.alt || 'NLine Electric project';
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       

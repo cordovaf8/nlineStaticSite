@@ -47,7 +47,7 @@
   <div class="container header__inner">
     <div class="header__row-top">
       <a class="brand" href="./index.html">
-        <img class="brand__logo" src="./assets/images/n-line-logo.png" alt="N Line Electric" />
+        <img class="brand__logo" src="./assets/images/n-line-logo.png" alt="NLine Electric" />
         <div class="brand__tag">Medium Voltage Utility &amp; Industrial Electrical Contractor</div>
       </a>
       <div style="display:flex; align-items:center; gap:12px;">

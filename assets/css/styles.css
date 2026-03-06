@@ -210,7 +210,7 @@ main.container.container--hero{background:transparent;}
 .header__contact{
   display:flex; align-items:center; gap:14px; flex-wrap:wrap;
   background:var(--accent-blue);
-  border-radius:12px;
+  border-radius:0;
   padding:8px 20px 8px 0;
   box-shadow:0 10px 40px rgba(0,0,0,0.3);
 }
@@ -897,7 +897,7 @@ select.input{
   background:var(--card);
   cursor:pointer;
 }
-.textarea{min-height:160px; resize:vertical;}
+.textarea{min-height:180px; resize:vertical;}
 .status{margin-top:10px; min-height:1.2em;}
 /* Hero section with overlay - full-width, full-height, flush to top */
 .hero-banner{

@@ -686,7 +686,9 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
   background:var(--card);
 }
 .service-block--alt{
-  background:#f0ead6;
+  background:#faf8f1;
+ /* background:f0ead6;
+*/
 }
 .service-block__inner{
   display:grid;

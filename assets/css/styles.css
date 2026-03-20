@@ -586,7 +586,7 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
   z-index:1;
 }
 [data-home-services] .card--service-bg-1{ background-image:url("../images/IMG_4830.JPEG"); }
-[data-home-services] .card--service-bg-2{ background-image:url("../images/IMG_5703.JPEG"); }
+[data-home-services] .card--service-bg-2{ background-image:url("../images/headshots/Indoor Electrical.jpg"); }
 [data-home-services] .card--service-bg-3{ background-image:url("../images/IMG_5706.JPEG"); }
 [data-home-services] .card--service-bg-4{ background-image:url("../images/IMG_5710.JPEG"); }
 [data-home-services] .card--service-bg-5{ background-image:url("../images/IMG_5712.JPEG"); }

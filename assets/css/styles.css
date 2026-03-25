@@ -587,9 +587,9 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 }
 [data-home-services] .card--service-bg-1{ background-image:url("../images/IMG_4830.JPEG"); }
 [data-home-services] .card--service-bg-2{ background-image:url("../images/headshots/Indoor Electrical.jpg"); }
-[data-home-services] .card--service-bg-3{ background-image:url("../images/IMG_5706.JPEG"); }
-[data-home-services] .card--service-bg-4{ background-image:url("../images/IMG_5710.JPEG"); }
-[data-home-services] .card--service-bg-5{ background-image:url("../images/IMG_5712.JPEG"); }
+[data-home-services] .card--service-bg-3{ background-image:url("../images/substation/Sub 1.png"); }
+[data-home-services] .card--service-bg-4{ background-image:url("../images/services/Overhead Pole Line Worker.jpeg"); }
+[data-home-services] .card--service-bg-5{ background-image:url("../images/services/Underground Distribution 1.jpeg"); }
 [data-home-services] .card--service-bg-6{ background-image:url("../images/IMG_5731.JPEG"); }
 [data-home-services] .card--service.is-expanded{
   grid-column:1 / -1;
@@ -817,6 +817,16 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
   line-height:1.55;
   margin:0;
   max-width:65ch;
+}
+.service-block__inline-photos{
+  margin-top:var(--space-lg);
+}
+.service-block__inline-photos img{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  border-radius:var(--radius);
+  display:block;
 }
 .service-block__image-wrap{
   position:relative;

@@ -589,7 +589,7 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 [data-home-services] .card--service-bg-2{ background-image:url("../images/headshots/Indoor Electrical.jpg"); }
 [data-home-services] .card--service-bg-3{ background-image:url("../images/substation/Sub 1.png"); }
 [data-home-services] .card--service-bg-4{ background-image:url("../images/services/Overhead Pole Line Worker.jpeg"); }
-[data-home-services] .card--service-bg-5{ background-image:url("../images/services/Underground Distribution 1.jpeg"); }
+[data-home-services] .card--service-bg-5{ background-image:url("../images/services/ChatGPT Image Mar 25, 2026, 12_30_29 PM.png"); }
 [data-home-services] .card--service-bg-6{ background-image:url("../images/IMG_5731.JPEG"); }
 [data-home-services] .card--service.is-expanded{
   grid-column:1 / -1;

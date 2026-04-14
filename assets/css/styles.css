@@ -134,6 +134,10 @@ main.container.container--hero{background:transparent;}
 .header--home .header__social-link{
   color:rgba(255,255,255,0.95);
 }
+.header--home .header__contact{
+  border-radius:999px;
+  padding:8px 18px;
+}
 .header--home .header__contact-link:hover,
 .header--home .header__social-link:hover{
   color:#fff;
@@ -495,6 +499,16 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
   color:#fff;
 }
 .btn--primary:hover{text-decoration:none; background:var(--primary-2);}
+.section--alt .btn--primary,
+.service-block--alt .btn--primary{
+  background:#fff;
+  color:#0b17a7;
+}
+.section--alt .btn--primary:hover,
+.service-block--alt .btn--primary:hover{
+  background:#f0f0f0;
+  color:#0b17a7;
+}
 .btn--learn-more{
   position:absolute;
   bottom:18px;
@@ -682,6 +696,9 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 .section--alt strong{
   color:#fff;
 }
+.section--alt a:not(.btn):not(.industry-chip){
+  color:#fff !important;
+}
 .section__title{font-size:clamp(20px, 2.5vw, 28px); margin:0 0 var(--space-md); font-weight:700;}
 .section__subtitle{font-size:clamp(20px, 2.5vw, 22.5px); color:var(--muted); margin:0 0 var(--space-md);}
 .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
@@ -712,6 +729,9 @@ h2, .h2{font-size:clamp(24px, 3vw, 32px); line-height:1.2; margin:0 0 var(--spac
 .service-block--alt .service-block__project-blurb,
 .service-block--alt strong{
   color:#fff;
+}
+.service-block--alt a:not(.btn){
+  color:#fff !important;
 }
 .service-block__inner{
   display:grid;
@@ -1243,6 +1263,17 @@ button.industry-chip[aria-selected="true"]{
 .picture-item:hover img{
   transform:scale(1.05);
 }
+/* Home sponsor logos: show full image without cropping */
+.section--sponsor-logos .picture-item{
+  aspect-ratio:auto;
+  background:transparent;
+}
+.section--sponsor-logos .picture-item img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  transform:none !important;
+}
 /* Pictures page: gallery area */
 .card--gallery-bg{
   background:var(--bg);
@@ -1543,6 +1574,9 @@ button.industry-chip[aria-selected="true"]{
 .footer__links a:hover{
   color:#fff;
   text-decoration:none;
+}
+.footer a{
+  color:#fff !important;
 }
 .footer__bottom{
   border-top:1px solid var(--border);

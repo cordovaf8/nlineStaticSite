@@ -49,7 +49,7 @@
   <div class="container header__inner">
     <a class="brand" href="./index.html">
       <img class="brand__logo" src="./assets/images/n-line-logo.png" alt="N Line Electric" />
-      <div class="brand__tag">Industrial &amp; Medium Voltage Electrical Contractor | 600V–35kV</div>
+      <div class="brand__tag">Industrial &amp; Medium Voltage Electrical Contractor</div>
     </a>
 
     <nav class="nav" aria-label="Primary navigation">
